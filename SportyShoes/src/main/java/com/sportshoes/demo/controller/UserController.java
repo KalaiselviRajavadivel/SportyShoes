@@ -33,7 +33,7 @@ public class UserController {
 
 	// insert new user into database
 	@PostMapping("/add")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Registration Success!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Registration Success!")
 	public UserModel addUser(@RequestBody UserModel user) {
 		
 			return userRepository.save(user);
@@ -42,7 +42,7 @@ public class UserController {
 
 	// fetch all user list from database
 	@GetMapping("/all")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "All users details!")
+	//@ResponseStatus(value = HttpStatus.CREATED)
 	@ApiOperation(value = "Fetch users by user_id",
 	notes = "Fetching user_id",
 	response = UserModel.class)
@@ -53,7 +53,7 @@ public class UserController {
 
 	// fetch specific user by their ID
 	@GetMapping("/{user_id}")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Specific user!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Specific user!")
 	@ApiOperation(value = "Fetch users by user_id",
 	notes = "Fetching user_id",
 	response = UserModel.class)
@@ -64,7 +64,7 @@ public class UserController {
 
 	// update existing user
 	@PutMapping("/update")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "User details updated!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "User details updated!")
 	public UserModel updateUser(@RequestBody UserModel user) {
 
 		return userRepository.save(user);

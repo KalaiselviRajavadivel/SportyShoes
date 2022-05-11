@@ -28,7 +28,7 @@ public class AdminController {
 
 	// insert new admin into database
 	@PostMapping("/add")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Admin Registration Success!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Admin Registration Success!")
 	public AdminModel addAdmin(@RequestBody AdminModel admin) {
 
 		return adminRepository.save(admin);
@@ -37,7 +37,7 @@ public class AdminController {
 
 	// fetch all admin list from database
 	@GetMapping("/all")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "All admin details!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "All admin details!")
 	@ApiOperation(value = "Fetch Admins by admin_id", notes = "Fetching admin_id", response = AdminModel.class)
 	public Iterable<AdminModel> allProduct() {
 
@@ -46,7 +46,7 @@ public class AdminController {
 
 	// fetch specific admin by their ID
 	@GetMapping("/{ADMIN_ID}")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Specific admin detail!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Specific admin detail!")
 	@ApiOperation(value = "Find Admins by admin_id", notes = "Provide an admin_id", response = AdminModel.class)
 	public Optional<AdminModel> productById(@PathVariable("ADMIN_ID") int ADMIN_ID) {
 
@@ -55,7 +55,7 @@ public class AdminController {
 
 	// update existing admin
 	@PutMapping("/update")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Admin details updated!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Admin details updated!")
 	public AdminModel updateOrder(@RequestBody AdminModel admin) {
 
 		return adminRepository.save(admin);
@@ -64,7 +64,7 @@ public class AdminController {
 	// delete admin from database
 	@DeleteMapping("/{ADMIN_ID}")
 	@ResponseStatus(value = HttpStatus.CREATED, reason = "Admin details deleted!")
-	public void deleteProduct(@PathVariable("ADMIN_ID") int ADMIN_ID) {
+	public void deleteAdmin(@PathVariable("ADMIN_ID") int ADMIN_ID) {
 
 		adminRepository.deleteById(ADMIN_ID);
 	}

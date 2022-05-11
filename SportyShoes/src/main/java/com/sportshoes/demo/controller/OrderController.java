@@ -31,7 +31,7 @@ public class OrderController {
 
 	// insert new order into database
 	@PostMapping("/add")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Order placed!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Order placed!")
 	public OrderModel addOrder(@RequestBody OrderModel order) {
 
 		return orderRepository.save(order);
@@ -39,7 +39,7 @@ public class OrderController {
 
 	// fetch all order list from database
 	@GetMapping("/all")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "All order details!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "All order details!")
 	@ApiOperation(value = "Fetch orders by order_id",
 	notes = "Fetching order_id",
 	response = OrderModel.class)
@@ -50,7 +50,7 @@ public class OrderController {
 
 	// fetch specific order by their ID
 	@GetMapping("/{order_id}")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Specific order detail!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Specific order detail!")
 	@ApiOperation(value = "Fetch orders by order_id",
 	notes = "Fetching order_id",
 	response = OrderModel.class)
@@ -61,7 +61,7 @@ public class OrderController {
 
 	// update existing order
 	@PutMapping("/update")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Order details updated!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Order details updated!")
 	public OrderModel updateOrder(@RequestBody OrderModel order) {
 
 		return orderRepository.save(order);

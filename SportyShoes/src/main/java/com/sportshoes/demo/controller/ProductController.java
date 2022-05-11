@@ -31,7 +31,7 @@ public class ProductController {
 
 	// insert new product into database
 	@PostMapping("/add")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Products Added!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Products Added!")
 	public ProductModel addProduct(@RequestBody ProductModel product) {
 
 		return productRepository.save(product);
@@ -39,7 +39,7 @@ public class ProductController {
 
 	// fetch all product list from database
 	@GetMapping("/all")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "All product details!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "All product details!")
 	@ApiOperation(value = "Fetch products by product_id",
 	notes = "Fetching product_id",
 	response = ProductModel.class)
@@ -50,7 +50,7 @@ public class ProductController {
 
 	// fetch specific product by their ID
 	@GetMapping("/{product_id}")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Specific product!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Specific product!")
 	@ApiOperation(value = "Fetch products by product_id",
 	notes = "Fetching product_id",
 	response = ProductModel.class)
@@ -61,7 +61,7 @@ public class ProductController {
 
 	// update existing product
 	@PutMapping("/update")
-	@ResponseStatus(value = HttpStatus.CREATED, reason = "Product details updated!")
+	//@ResponseStatus(value = HttpStatus.CREATED, reason = "Product details updated!")
 	public ProductModel updateProduct(@RequestBody ProductModel product) {
 
 		return productRepository.save(product);
